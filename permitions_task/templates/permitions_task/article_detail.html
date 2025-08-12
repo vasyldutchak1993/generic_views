@@ -1,0 +1,13 @@
+{% extends "permitions_task/base.html" %}
+
+{% block content %}
+<h1>{{ article.title }}</h1>
+<p>{{ article.content }}</p>
+
+{% if perms.PermissionTaskArticle.can_edit_article %}
+    <a href="{% url 'article_edit' article.pk %}" class="btn btn-warning">Upraviť</a>
+{% endif %}
+{% if perms.PermissionTaskArticle.can_delete_article %}
+    <a href="{% url 'article_delete' article.pk %}" class="btn btn-danger">Vymazať</a>
+{% endif %}
+{% endblock %}
