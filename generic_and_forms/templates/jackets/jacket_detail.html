@@ -1,0 +1,8 @@
+{% extends "jackets/base.html" %}
+
+{% block content %}
+<h1>{{ jacket.brand }} ({{ jacket.color }})</h1>
+<a href="{% url 'jacket_update' jacket.pk %}" class="btn btn-warning">Upraviť</a>
+<a href="{% url 'jacket_delete' jacket.pk %}" class="btn btn-danger">Vymazať</a>
+<a href="{% url 'jacket_list' %}" class="btn btn-secondary">Späť</a>
+{% endblock %}

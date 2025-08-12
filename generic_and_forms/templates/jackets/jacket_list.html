@@ -1,0 +1,15 @@
+{% extends "jackets/base.html" %}
+
+{% block content %}
+<h1>Zoznam búnd</h1>
+<a href="{% url 'jacket_create' %}" class="btn btn-primary mb-3">Pridať bundu</a>
+<ul class="list-group">
+    {% for jacket in jackets %}
+    <li class="list-group-item">
+        <a href="{% url 'jacket_detail' jacket.pk %}">{{ jacket.brand }} - {{ jacket.color }}</a>
+    </li>
+    {% empty %}
+    <li class="list-group-item">Žiadne bundy.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

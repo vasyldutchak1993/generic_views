@@ -1,0 +1,11 @@
+{% extends "jackets/base.html" %}
+
+{% block content %}
+<h1>Vymazať bundu</h1>
+<p>Ste si istý, že chcete vymazať "{{ object }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Áno, vymazať</button>
+    <a href="{% url 'jacket_list' %}" class="btn btn-secondary">Zrušiť</a>
+</form>
+{% endblock %}

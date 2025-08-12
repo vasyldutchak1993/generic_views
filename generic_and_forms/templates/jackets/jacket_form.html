@@ -1,0 +1,10 @@
+{% extends "jackets/base.html" %}
+
+{% block content %}
+<h1>{% if object %}Upraviť{% else %}Pridať{% endif %} bundu</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Uložiť</button>
+</form>
+{% endblock %}
